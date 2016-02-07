@@ -1,0 +1,24 @@
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+      a.navbar-brand(ui-sref="home") VMApp
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active
+          a(ui-sref="home") Home
+        li
+          a(ui-sref=".addSchedule") Add Visitor
+        li
+          a(href='#') Check-In
+        li
+          a(href='#') Check-Out
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='#')
+            span.glyphicon.glyphicon-log-in
+            |  Logout
+div.container(ng-include="'partials/searchSchedule.jade'")
+div.container
+  ui-view

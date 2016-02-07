@@ -1,0 +1,9 @@
+h1= Login
+ng-form.form-horizontal(name="loginForm")
+	div.form-group
+		label.control-label(for="username")| Username
+		input.form-control(type="text",id="username",name="username",placeholder="username",required)
+	div.form-group
+		label.control-label(for="password")| Password
+		input.form-control(type="password",id="password",name="password",placeholder="password",required)
+	button(ui-sref="home")| Submit 

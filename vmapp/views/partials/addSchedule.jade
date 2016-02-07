@@ -1,0 +1,59 @@
+h1
+	|Add Schedule
+ng-form(name="scheduleForm",ng-controller="addScheduleController")
+	div.row
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="firstname")|First Name
+			input.form-control(type="text",id="firstname",name="firstname",ng-model="schedule.firstname",required)
+	
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="lastname")|Last Name
+			input.form-control(type="text",id="lastname",name="lastname",ng-model="schedule.lastname",required)
+	
+	div.row
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="datefrom")|From Date
+			input.form-control(type="date",id="datefrom",name="datefrom",ng-model="schedule.datefrom",required)
+		
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="dateto")| To Date
+			input.form-control(type="dateto",id="dateto",name="dateto",ng-model="schedule.dateto",required)
+
+	div.row
+		div.form-group
+			label(for="interviewCandidate").col-xs-12.col-sm-6.col-md-6.col-lg-3| Interview Candidate
+				input.form-control.radio-inline(type="radio",id="interviewCandidate",name="visitorType",ng-model="schedule.visitorType",value="interview candidate")
+			label(for="client").col-xs-12.col-sm-6.col-md-6.col-lg-3| Client
+				input.form-control.radio-inline(type="radio",id="client",name="visitorType",ng-model="schedule.visitorType",value="client")
+			label(for="vendor").col-xs-12.col-sm-6.col-md-6.col-lg-3| Vendor
+				input.form-control.radio-inline(type="radio",id="vendor",name="visitorType",ng-model="schedule.visitorType",value="vendor")
+			label(for="general").col-xs-12.col-sm-6.col-md-6.col-lg-3| General
+				input.form-control.radio-inline(type="radio",id="general",name="visitorType",ng-model="schedule.visitorType",value="general")
+	div.row
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="time")| Time
+			input.form-control(type="text",id="time",name="time",ng-model="schedule.time",required)
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="duration")| Duration
+			input.form-control(type="text",id="duration",name="duration",ng-model="schedule.duration")
+
+	div.row
+		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			label(for="employeeId")| Employee Id
+			input.form-control(type="text",id="employeeId",name="employeeId",ng-model="schedule.employeeId")
+		div.form-group.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			label(for="purpose")|Purpose
+			input.form-control(type="text",id="purpose",name="purpose",ng-model="schedule.purpose")
+
+	div.row
+		div.form-group.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			label(for="specialRequirements")|Special Requirements
+			input.form-control(type="text",id="specialRequirements",name="specialRequirements",ng-model="schedule.specialRequirements")
+
+		div.form-group.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			label(for="specialComments")|Special Comments
+			input.form-control(type="text",id="specialComments",name="specialComments",ng-model="schedule.specialComments")
+
+	div.row.pull-right
+		button.btn.btn-primary(ng-click="addSchedule()")| Submit
+		button.btn(ng-click="cancelSchedule()")| Cancel		

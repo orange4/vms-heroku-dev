@@ -1,8 +1,9 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Forms */
+.ng-invalid.ng-dirty {
+  border-color: red;
+  outline-color: red;
 }
-
-a {
-  color: #00B7FF;
+.ng-valid.ng-dirty {
+  border-color: green;
+  outline-color: green;
 }
