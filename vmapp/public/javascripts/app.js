@@ -1,6 +1,6 @@
-var app = angular.module("vmApp",['ui.router']);
+var app = angular.module("vmApp",['ui.router','ui.bootstrap','restangular']);
 app.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/login');
 	$stateProvider
     .state('login', {
       url: "/login",
@@ -12,13 +12,10 @@ app.config(function($stateProvider, $urlRouterProvider){
     })
     .state('home.addSchedule', {
       url: "/addSchedule",
-      templateUrl: "partials/addSchedule.jade",
-      controller: function($scope) {
-        $scope.items = ["A", "List", "Of", "Items"];
-      }
+      templateUrl: "partials/addSchedule.jade"
     })
     .state('home.listSchedule', {
       url: "/listSchedule",
-      templateUrl: "partials/listSchedule.jade"
-    })
+      templateUrl: "partials/listSchedule.jade"      
+    });
 });

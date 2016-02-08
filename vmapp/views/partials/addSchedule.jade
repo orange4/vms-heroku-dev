@@ -1,6 +1,6 @@
 h1
 	|Add Schedule
-ng-form(name="scheduleForm",ng-controller="addScheduleController")
+ng-form.col-xs-12.col-sm-12.col-md-6.col-lg-6(name="scheduleForm",ng-controller="addScheduleController")
 	div.row
 		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
 			label(for="firstname")|First Name
@@ -13,15 +13,22 @@ ng-form(name="scheduleForm",ng-controller="addScheduleController")
 	div.row
 		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
 			label(for="datefrom")|From Date
-			input.form-control(type="date",id="datefrom",name="datefrom",ng-model="schedule.datefrom",required)
-		
+			p.input-group
+				input.form-control(type='text', id="datefrom",name="datefrom",uib-datepicker-popup='{{format}}', ng-model='schedule.datefrom', is-open='popup1.opened', min-date='minDate', max-date='maxDate', datepicker-options='dateOptions', date-disabled='disabled(date, mode)', ng-required='true', close-text='Close', alt-input-formats='altInputFormats')
+				span.input-group-btn
+					button.btn.btn-default(type='button', ng-click='open1()')
+						i.glyphicon.glyphicon-calendar
+
 		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
 			label(for="dateto")| To Date
-			input.form-control(type="dateto",id="dateto",name="dateto",ng-model="schedule.dateto",required)
-
+			p.input-group
+				input.form-control(type='text', id="dateto",name="dateto",uib-datepicker-popup='{{format}}', ng-model='schedule.dateto', is-open='popup2.opened', min-date='minDate', max-date='maxDate', datepicker-options='dateOptions', date-disabled='disabled(date, mode)', ng-required='true', close-text='Close', alt-input-formats='altInputFormats')
+				span.input-group-btn
+					button.btn.btn-default(type='button', ng-click='open2()')
+						i.glyphicon.glyphicon-calendar
 	div.row
 		div.form-group
-			label(for="interviewCandidate").col-xs-12.col-sm-6.col-md-6.col-lg-3| Interview Candidate
+			label(for="interviewCandidate").col-xs-12.col-sm-6.col-md-6.col-lg-3|Interview Candidate
 				input.form-control.radio-inline(type="radio",id="interviewCandidate",name="visitorType",ng-model="schedule.visitorType",value="interview candidate")
 			label(for="client").col-xs-12.col-sm-6.col-md-6.col-lg-3| Client
 				input.form-control.radio-inline(type="radio",id="client",name="visitorType",ng-model="schedule.visitorType",value="client")
@@ -35,12 +42,12 @@ ng-form(name="scheduleForm",ng-controller="addScheduleController")
 			input.form-control(type="text",id="time",name="time",ng-model="schedule.time",required)
 		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
 			label(for="duration")| Duration
-			input.form-control(type="text",id="duration",name="duration",ng-model="schedule.duration")
+			input.form-control(type="text",id="duration",name="duration",ng-model="schedule.duration",required)
 
 	div.row
 		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
 			label(for="employeeId")| Employee Id
-			input.form-control(type="text",id="employeeId",name="employeeId",ng-model="schedule.employeeId")
+			input.form-control(type="text",id="employeeId",name="employeeId",ng-model="schedule.employeeId",required)
 		div.form-group.col-xs-12.col-sm-12.col-md-6.col-lg-6
 			label(for="purpose")|Purpose
 			input.form-control(type="text",id="purpose",name="purpose",ng-model="schedule.purpose")
@@ -56,4 +63,4 @@ ng-form(name="scheduleForm",ng-controller="addScheduleController")
 
 	div.row.pull-right
 		button.btn.btn-primary(ng-click="addSchedule()")| Submit
-		button.btn(ng-click="cancelSchedule()")| Cancel		
+		button.btn(ng-click="clearSchedule()")| Clear

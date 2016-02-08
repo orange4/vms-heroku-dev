@@ -1,0 +1,33 @@
+div.row
+	p
+		div.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			h4| {{schedule.firstname}} {{schedule.lastname }}
+div.row
+	div.col-xs-12.col-sm-12.col-md-3.col-lg-3
+		label
+			strong| Date From
+		span.textReadOnly| {{schedule.datefrom | date:'dd/MM/yyyy'}}
+	div.col-xs-12.col-sm-12.col-md-3.col-lg-3
+		label
+			strong| Date To
+		span.textReadOnly| {{schedule.dateto | date:'dd/MM/yyyy'}}
+	div.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		label
+			strong| Time
+		span.textReadOnly| {{schedule.time}}
+	div.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		label
+			strong| Duration
+		span.textReadOnly| {{schedule.duration}}
+	div.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		label
+			strong| Purpose
+		span.textReadOnly| {{schedule.purpose}}
+	div.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		label
+			strong| Special Requirements
+		span.textReadOnly| {{schedule.specialRequirements}}
+	div.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		label
+			strong| Special Comments
+		span.textReadOnly| {{schedule.specialComments}}								

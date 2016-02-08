@@ -1,2 +1,4 @@
-div()
+div(ng-controller="listScheduleController")
 	h1|Schedules
+	div(ng-repeat="schedule in schedules")
+		div(ng-include="'partials/viewSchedule.jade'")

@@ -7,3 +7,16 @@
   border-color: green;
   outline-color: green;
 }
+
+.ng-submitted .ng-invalid {
+  border-color: red;
+  outline-color: red;
+}
+.ng-submitted .ng-valid {
+  border-color: green;
+  outline-color: green;
+}
+
+span.textReadOnly{
+	padding: 5px;
+}
