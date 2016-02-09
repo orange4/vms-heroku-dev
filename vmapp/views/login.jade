@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.container
+		.omb_login
+			h3.omb_authTitle| Login to VMSApp
+			.row.omb_row-sm-offset-3.omb_socialButtons
+				.col-xs-4.col-sm-2
+				.col-xs-4.col-sm-2
+					a.btn.btn-lg.btn-block.omb_btn-google(href='/auth/google')
+						i.fa.fa-google-plus.visible-xs
+						span.hidden-xs Google+					
+				.col-xs-4.col-sm-2

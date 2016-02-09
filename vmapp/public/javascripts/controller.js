@@ -8,7 +8,7 @@ var addScheduleController = function($scope,Restangular,$state){
 		if( $scope.scheduleForm.$valid ){
 			// interact with service and save data
 			schedules.post($scope.schedule).then(function() {
-				$state.go('home');
+				$state.go('home.listSchedule');
 			}, function() {
 			});
 		}

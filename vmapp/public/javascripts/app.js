@@ -1,11 +1,7 @@
 var app = angular.module("vmApp",['ui.router','ui.bootstrap','restangular']);
 app.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/home.addSchedule');
 	$stateProvider
-    .state('login', {
-      url: "/login",
-      templateUrl: "partials/login.jade"
-    })
     .state('home', {
       url: "/home",
       templateUrl: "partials/home.jade"

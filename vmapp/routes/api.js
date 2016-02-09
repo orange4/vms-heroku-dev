@@ -2,34 +2,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 
-// Mongoose Schema definition
-usersSchema = new mongoose.Schema({
-  username: String,
-  password: String
-},{ collection : 'users' , timestamps: true});
-
-scheduleSchema = new mongoose.Schema({
-  firstname : String, 
-  lastname : String,
-  datefrom : Date,
-  dateto: Date,
-  time: String,
-  duration: Number,
-  visitorType: String,
-  employeeId: Number,
-  purpose: String,
-  specialRequirements: String,
-  specialComments: String,
-
-  isCheckedIn : Boolean,
-  isCheckedOut : Boolean,
-  checkedInTime: Date,
-  checkedOutTime: Date,
-  imgUrl: String,
-},{ collection : 'schedule' , timestamps: true});
-
-Schedule = mongoose.model('Schedule', scheduleSchema);
-Users = mongoose.model('Users', usersSchema);
+// load up the user model
+var Schedule  = require('../models/schedule');
 
 mongoose.connect(process.env.MONGOLAB_URI, function (error) {
     if (error) console.error(error);

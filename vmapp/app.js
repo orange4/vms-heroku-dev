@@ -4,11 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var flash    = require('connect-flash');
+var session  = require('express-session');
 
 var routes = require('./routes/index');
 var partials = require('./routes/partials');
 var api = require('./routes/api');
-
 var app = express();
 
 // view engine setup
@@ -25,9 +27,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/static', express.static(__dirname + '/node_modules/'));
 
-app.use('/', routes);
+var passportConfig = require('./config/passport')
+passportConfig(passport);
+
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
+
+routes(app, passport);
 app.use('/partials', partials);
 app.use('/api', api);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

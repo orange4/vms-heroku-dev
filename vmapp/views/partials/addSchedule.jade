@@ -27,15 +27,21 @@ ng-form.col-xs-12.col-sm-12.col-md-6.col-lg-6(name="scheduleForm",ng-controller=
 					button.btn.btn-default(type='button', ng-click='open2()')
 						i.glyphicon.glyphicon-calendar
 	div.row
-		div.form-group
-			label(for="interviewCandidate").col-xs-12.col-sm-6.col-md-6.col-lg-3|Interview Candidate
-				input.form-control.radio-inline(type="radio",id="interviewCandidate",name="visitorType",ng-model="schedule.visitorType",value="interview candidate")
-			label(for="client").col-xs-12.col-sm-6.col-md-6.col-lg-3| Client
-				input.form-control.radio-inline(type="radio",id="client",name="visitorType",ng-model="schedule.visitorType",value="client")
-			label(for="vendor").col-xs-12.col-sm-6.col-md-6.col-lg-3| Vendor
-				input.form-control.radio-inline(type="radio",id="vendor",name="visitorType",ng-model="schedule.visitorType",value="vendor")
-			label(for="general").col-xs-12.col-sm-6.col-md-6.col-lg-3| General
-				input.form-control.radio-inline(type="radio",id="general",name="visitorType",ng-model="schedule.visitorType",value="general")
+		div.form-group.col-xs-12.col-sm-12.col-md-12.col-lg-12			
+			input.css-checkbox.form-control(type="radio",id="client",name="visitorType",ng-model="schedule.visitorType",value="client")
+			label.css-label(for="client").col-xs-12.col-sm-6.col-md-6.col-lg-3
+				span|Client
+			input.css-checkbox.form-control(type="radio",id="vendor",name="visitorType",ng-model="schedule.visitorType",value="vendor")
+			label.css-label(for="vendor").col-xs-12.col-sm-6.col-md-6.col-lg-3
+				span|Vendor
+			
+			input.css-checkbox.form-control(type="radio",id="general",name="visitorType",ng-model="schedule.visitorType",value="general")
+			label.css-label(for="general").col-xs-12.col-sm-6.col-md-6.col-lg-3
+				span|General
+			
+			input.css-checkbox.form-control(type="radio",id="interviewCandidate",name="visitorType",ng-model="schedule.visitorType",value="interview-candidate")
+			label.css-label(for="interviewCandidate").col-xs-12.col-sm-6.col-md-6.col-lg-3
+				span|Interview			
 	div.row
 		div.form-group.col-xs-12.col-sm-6.col-md-6.col-lg-6
 			label(for="time")| Time
