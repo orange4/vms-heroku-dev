@@ -10,10 +10,10 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var configAuth = require('./auth');
 
 // load up the user model
-var User            = require('../models/user');
+var User = require('../models/user');
 
 module.exports = function(passport) {
-
+    
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
         done(null, user.id);

@@ -1,6 +1,6 @@
 var app = angular.module("vmApp",['ui.router','ui.bootstrap','restangular']);
 app.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/home.addSchedule');
+  $urlRouterProvider.otherwise('/home');
 	$stateProvider
     .state('home', {
       url: "/home",
