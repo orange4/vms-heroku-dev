@@ -1,4 +1,0 @@
-GOOGLE_AUTH_CLIENT_ID=6688872429-02m82e9luefpr9aqjl9nsthnpvt864ja.apps.googleusercontent.com
-GOOGLE_AUTH_CLIENT_SECRET=rCorkg0OAHhTgAbtFYPYAbZ4
-GOOGLE_AUTH_CALLBACK_URL=http://localhost:3000/home/callback
-MONGOLAB_URI=mongodb://heroku_25c083m6:rvgul20oksj0bc2fhg8h99r2c9@ds059125.mongolab.com:59125/heroku_25c083m6
